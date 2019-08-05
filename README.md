@@ -7,7 +7,8 @@ Quantitative susceptibility mapping using deep neural network: QSMnet
 Neuroimage, 179 (2018), pp. 199-206.
 
 # Overview
-![Graphical_abstract](./img/Graphical_abstract.jpg)
+![Graphical_abstract](https://user-images.githubusercontent.com/29892433/62440733-5d4ad300-b78c-11e9-975d-ca56e77422aa.jpg)
+
 
 ## Requirements
 * Python 2.7

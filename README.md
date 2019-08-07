@@ -40,12 +40,11 @@ Neuroimage, 179 (2018), pp. 199-206.
   
 * Usage:
 ```bash
-Phase_processing_for_QSMnet('DICOM_DIR','MATLAB_CODE_DIR','PREPROCESS_DIR')
-% DICOM_DIR : Directory of DICOM folder
-% MATLAB_CODE_DIR : Directory of Matlab_code
-% PREPROCESS_DIR : Directory of phase processing result
+save_input_data_for_QSMnet(TissuePhase, Mask)
+% TissuePhase : Results of 3D V-SHARP
+% Mask : Results of 3D V-SHARP
 ```
-  * 'field_data.mat' file will be saved after phase processing.
+  * 'inf_data.mat' file will be saved after phase processing.
   
 ### Inference
 * Requirements in python library

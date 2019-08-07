@@ -51,7 +51,6 @@ Phase_processing_for_QSMnet('DICOM_DIR','MATLAB_CODE_DIR','PREPROCESS_DIR')
 ### Inference
 * Requirements in python library
   * tensorflow
-  * h5py
   * os
   * argparse
   * scipy.io

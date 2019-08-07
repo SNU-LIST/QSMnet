@@ -46,7 +46,6 @@ Phase_processing_for_QSMnet('DICOM_DIR','MATLAB_CODE_DIR','PREPROCESS_DIR')
 % PREPROCESS_DIR : Directory of phase processing result
 ```
   * 'field_data.mat' file will be saved after phase processing.
-  * Due to 4 pooling layers in U-net structure, the data is cropped to **multiple of 16**.
   
 ### Inference
 * Requirements in python library

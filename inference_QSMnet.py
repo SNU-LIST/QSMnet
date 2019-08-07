@@ -54,7 +54,7 @@ def inf(dir_git, dir_patient, net_name):
     [pfield, N_difference, N] = padding_data(field)
 
     Z1 = tf.placeholder("float", [None, N[0], N[1], N[2], 1])
-    arc = load_module_func('QSMnet')
+    arc = load_module_func(str(net_name))
     feed_result = arc.qsmnet_deep(Z1, keep_prob, False, False)
 
     init = tf.global_variables_initializer()

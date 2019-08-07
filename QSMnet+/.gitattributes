@@ -1,2 +1,0 @@
-network* filter=lfs diff=lfs merge=lfs -text
-l24* filter=lfs diff=lfs merge=lfs -text

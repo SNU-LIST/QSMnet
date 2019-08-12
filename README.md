@@ -46,8 +46,8 @@ ISMRM 27th annual meeting & exhibition. 2019 May:0317._
 save_input_data_for_QSMnet(TissuePhase, Mask, TE, B0)
 % TissuePhase : Results of 3D V-SHARP
 % Mask : Results of 3D V-SHARP
-% TE (ms)
-% B0 (T)
+% TE : unit ms
+% B0 : unit T
 % Convert unit from Hz to ppm : field / (Sum(TE) * B0 * gyro) [ppm]
 ```
   * 'inf_data.mat' file will be saved after phase processing.

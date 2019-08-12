@@ -40,13 +40,15 @@ ISMRM 27th annual meeting & exhibition. 2019 May:0317._
   * Brain extraction : BET (MEDI toolbox)
   * Phase unwrapping : Laplaican phase unwrapping (STI Suite)
   * Background field removal : 3D V-SHARP (STI Suite)
-  * Convert unit from Hz to ppm : field / (Sum(TE) * B0 * gyro) [ppm]
   
 * Usage:
 ```bash
-save_input_data_for_QSMnet(TissuePhase, Mask)
+save_input_data_for_QSMnet(TissuePhase, Mask, TE, B0)
 % TissuePhase : Results of 3D V-SHARP
 % Mask : Results of 3D V-SHARP
+% TE (ms)
+% B0 (T)
+% Convert unit from Hz to ppm : field / (Sum(TE) * B0 * gyro) [ppm]
 ```
   * 'inf_data.mat' file will be saved after phase processing.
   

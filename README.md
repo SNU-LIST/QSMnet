@@ -5,6 +5,9 @@
 * J. Yoon, E. Gong, I. Chatnuntawech, B. Bilgic, J. Lee, W. Jung, J. Ko, H. Jung, K. Setsompop, G. Zaharchuk, E.Y. Kim, J. Pauly, J. Lee
 Quantitative susceptibility mapping using deep neural network: QSMnet
 Neuroimage, 179 (2018), pp. 199-206.
+* W. Jung, J. Yoon, J. Choi, E. Kim, J. Lee
+On the linearity of deep neural network trained QSM
+ISMRM 27th annual meeting & exhibition, 2019, #0317
 
 # Overview
 ![Graphical_abstract](https://user-images.githubusercontent.com/29892433/62440733-5d4ad300-b78c-11e9-975d-ca56e77422aa.jpg)
@@ -56,6 +59,14 @@ save_input_data_for_QSMnet(TissuePhase, Mask)
   * niblabel
 
 * Usage
+First Time Only
+1. Clone this repository
+
+```bash
+git clone https://github.com/SNU-LIST/QSMnet.git
+```
+2. Run downlaod_network.sh
+
 ```bash
 python inference_QSMnet.py <PREPROCESS_DIR> <NETWORK_NAME>
 ```

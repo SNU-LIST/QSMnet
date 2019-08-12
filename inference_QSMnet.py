@@ -76,7 +76,7 @@ def inf(dir_git, dir_patient, net_name):
 
     print("Saving MATLAB & NII file...")
     scipy.io.savemat(str(dir_p) + '/result_' + str(net_name) + '.mat', mdict={'sus': res})
-    save_nii(res, dir_p, 'deep_result_' + str(net_name))
+    save_nii(res, dir_p, 'result_' + str(net_name))
 
     print("All done!")
 

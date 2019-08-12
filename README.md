@@ -34,10 +34,13 @@ ISMRM 27th annual meeting & exhibition. 2019 May:0317._
 ```bash
 git clone https://github.com/SNU-LIST/QSMnet.git
 ```
-2. Download network 
+2. Download network </br>
+* For Linux User,
 ```bash
 sh download_network.sh
 ```
+* For Windows User, </br>
+https://drive.google.com/drive/u/0/folders/1E7e9thvF5Zu68Sr9Mg3DBi-o4UdhWj-8 </br>
 
 ### Phase processing
 * Requirements

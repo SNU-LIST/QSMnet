@@ -2,12 +2,13 @@
 * The code is for reconstructing Quantitative Susceptibility Mapping by deep neural network (QSMnet). Data preprocessing (.m) and the inference code of QSMnet (.py) are availabe. 
 
 # References
-* J. Yoon, E. Gong, I. Chatnuntawech, B. Bilgic, J. Lee, W. Jung, J. Ko, H. Jung, K. Setsompop, G. Zaharchuk, E.Y. Kim, J. Pauly, J. Lee
-Quantitative susceptibility mapping using deep neural network: QSMnet
-Neuroimage, 179 (2018), pp. 199-206.
-* W. Jung, J. Yoon, J. Choi, E. Kim, J. Lee
-On the linearity of deep neural network trained QSM
-ISMRM 27th annual meeting & exhibition, 2019, #0317
+* QSMnet </br>
+J. Yoon, E. Gong, I. Chatnuntawech, B. Bilgic, J. Lee, W. Jung, J. Ko, H. Jung, K. Setsompop, G. Zaharchuk, E.Y. Kim, J. Pauly, J. Lee.
+Quantitative susceptibility mapping using deep neural network: QSMnet.
+Neuroimage. 2018 Oct;179:199-206.
+* QSMnet+ </br>
+W. Jung, J. Yoon, J. Choi, E. Kim, J. Lee. On the linearity of deep neural network trained QSM.
+ISMRM 27th annual meeting & exhibition. 2019 May:0317.
 
 # Overview
 ![Graphical_abstract](https://user-images.githubusercontent.com/29892433/62440733-5d4ad300-b78c-11e9-975d-ca56e77422aa.jpg)
@@ -31,8 +32,8 @@ ISMRM 27th annual meeting & exhibition, 2019, #0317
 
 ### Phase processing
 * Requirements
-  * MEDI toolbox
-  * STI Suite
+  * MEDI toolbox (T. Liu, J. Liu, L.D. Rochefort, P. Spincemaille, I. Khalidov, J.R. Ledoux, Y. Wang. Morphology enabled dipole inversion (MEDI) from a single‐angle acquisition: comparison with COSMOS in human brain imaging. Magnetic resonance in medicine. 2011 Apr;66(3):777-783.)
+  * STI Suite (W. Li, A.V. Avram, B. Wu, X. Xiao, C. Liu. Integrated Laplacian‐based phase unwrapping and background phase removal for quantitative susceptibility mapping. NMR in Biomedicine. 2014 Dec;27(2):219-227.)
   
 * Process flow
   * Extract magnitude and phase image from DICOMs

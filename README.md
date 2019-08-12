@@ -25,6 +25,15 @@ ISMRM 27th annual meeting & exhibition. 2019 May:0317._
 
 ## Manual
 
+###First Time Only
+1. Clone this repository
+```bash
+git clone https://github.com/SNU-LIST/QSMnet.git
+```
+2. Download network 
+```bash
+sh download_network.sh
+```
 ### Data acquisition
 * Training data of QSMnet was acquired at 3T MRI (SIEMENS).
 * 3D single-echo GRE scan with following sequence parameters: FOV = 256 x 224 x 176 mm<sup>3</sup>, voxel size = 1 x 1 x 1 x mm<sup>3</sup>, TR = 33 ms, TE = 25 ms, bandwidth = 100 Hz/pixel, flip angle = 15°.
@@ -62,14 +71,7 @@ save_input_data_for_QSMnet(TissuePhase, Mask, TE, B0)
   * niblabel
 
 * Usage
-First Time Only
-1. Clone this repository
-
-```bash
-git clone https://github.com/SNU-LIST/QSMnet.git
-```
-2. Download network 
 ```bash
 python inference_QSMnet.py <PREPROCESS_DIR> <NETWORK_NAME>
 ```
-  * 'deep_result_<network_name>.mat' & 'deep_result_<network_name>.nii' will be save after QSMnet reconstruction.
+  * 'result_<network_name>.mat' & 'result_<network_name>.nii' will be save after QSMnet reconstruction.

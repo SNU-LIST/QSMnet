@@ -23,11 +23,11 @@ ISMRM 27th annual meeting & exhibition. 2019 May:0317._
 
 * MATLAB R2015b
 
-## Usage
+## Manual
 
 ### Data acquisition
 * Training data of QSMnet was acquired at 3T MRI (SIEMENS).
-* 3D single-echo GRE scan was acuiqred using following sequence parameters: FOV = 256 x 224 x 176 mm<sup>3</sup>, voxel size = 1 x 1 x 1 x mm<sup>3</sup>, TR = 33 ms, TE = 25 ms, bandwidth = 100 Hz/pixel, flip angle = 15°.
+* 3D single-echo GRE scan with following sequence parameters: FOV = 256 x 224 x 176 mm<sup>3</sup>, voxel size = 1 x 1 x 1 x mm<sup>3</sup>, TR = 33 ms, TE = 25 ms, bandwidth = 100 Hz/pixel, flip angle = 15°.
 
 
 ### Phase processing

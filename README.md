@@ -74,4 +74,4 @@ save_input_data_for_QSMnet(TissuePhase, Mask, TE, B0)
 ```bash
 python inference_QSMnet.py <PREPROCESS_DIR> <NETWORK_NAME>
 ```
-  * 'result_<network_name>.mat' & 'result_<network_name>.nii' will be save after QSMnet reconstruction.
+  * 'result_<network_name>.mat' & 'result_<network_name>.nii' will be saved after QSMnet reconstruction.

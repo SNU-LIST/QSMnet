@@ -49,7 +49,7 @@ save_input_data_for_QSMnet(TissuePhase, Mask, TE, B0, out_dir)
 % TE : unit ms
 % B0 : unit T
 % out_dir : directory of patient data
-% Convert unit from Hz to ppm : field / (Sum(TE) * B0 * gyro) [ppm]
+% Convert unit from Hz to ppm : TissuePhase / (Sum(TE) * B0 * gyro) [ppm]
 ```
   * 'inf_data.mat' file will be saved after phase processing.
   

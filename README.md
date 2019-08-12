@@ -65,8 +65,7 @@ First Time Only
 ```bash
 git clone https://github.com/SNU-LIST/QSMnet.git
 ```
-2. Run downlaod_network.sh
-
+2. Download network 
 ```bash
 python inference_QSMnet.py <PREPROCESS_DIR> <NETWORK_NAME>
 ```

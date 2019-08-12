@@ -75,7 +75,7 @@ def inf(dir_git, dir_patient, net_name):
     res = np.multiply(crop_data(res.squeeze(), N_difference),Mask)
 
     print("Saving MATLAB & NII file...")
-    scipy.io.savemat(str(dir_p) + '/deep_result_' + str(net_name) + '.mat', mdict={'out1': res})
+    scipy.io.savemat(str(dir_p) + '/result_' + str(net_name) + '.mat', mdict={'sus': res})
     save_nii(res, dir_p, 'deep_result_' + str(net_name))
 
     print("All done!")

@@ -44,12 +44,12 @@ https://drive.google.com/drive/u/0/folders/1E7e9thvF5Zu68Sr9Mg3DBi-o4UdhWj-8 </b
 
 ### Phase processing
 * Requirements
-  * MEDI toolbox (_Ref: T. Liu, J. Liu, L.D. Rochefort, P. Spincemaille, I. Khalidov, J.R. Ledoux, Y. Wang. Morphology enabled dipole inversion (MEDI) from a single‐angle acquisition: comparison with COSMOS in human brain imaging. Magnetic resonance in medicine. 2011 Apr;66(3):777-783._)
+  * FSL (_Ref: S.M. Smith. Fast robust automated brain extraction. Human brain mapping. 2002 Sep;17(3):143-155._)
   * STI Suite (_Ref: W. Li, A.V. Avram, B. Wu, X. Xiao, C. Liu. Integrated Laplacian‐based phase unwrapping and background phase removal for quantitative susceptibility mapping. NMR in Biomedicine. 2014 Dec;27(2):219-227._)
   
 * Process flow
   * Extract magnitude and phase image from DICOMs
-  * Brain extraction : BET (MEDI toolbox)
+  * Brain extraction : BET (FSL)
   * Phase unwrapping : Laplaican phase unwrapping (STI Suite)
   * Background field removal : 3D V-SHARP (STI Suite)
   

@@ -54,7 +54,8 @@ https://drive.google.com/drive/u/0/folders/1E7e9thvF5Zu68Sr9Mg3DBi-o4UdhWj-8 </b
   * Background field removal : 3D V-SHARP (STI Suite)
   
 * Usage:
-  * In MATLAB,
+  * In MATLAB, run save_input_data_for_QSMnet.m
+  * 'inf_data.mat' file will be saved after phase processing.
 ```bash
 save_input_data_for_QSMnet(TissuePhase, Mask, TE, B0)
 % TissuePhase : Results of 3D V-SHARP
@@ -63,7 +64,7 @@ save_input_data_for_QSMnet(TissuePhase, Mask, TE, B0)
 % B0 (T)
 % Convert unit from Hz to ppm : field / (Sum(TE) * B0 * gyro) [ppm]
 ```
-  * 'inf_data.mat' file will be saved after phase processing.
+   
   
 ### Inference
 * Requirements in python library

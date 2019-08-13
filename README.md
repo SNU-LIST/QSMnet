@@ -1,5 +1,5 @@
 # QSMnet
-* The code is for reconstructing Quantitative Susceptibility Mapping by deep neural network (QSMnet). Data preprocessing (.m) and the inference code of QSMnet (.py) are availabe. 
+* The code is for reconstructing Quantitative Susceptibility Mapping by deep neural network (QSMnet) and QSMnet<sup>+</sup>. QSMnet<sup>+</sup> covers a wider range of susceptibility than QSMnet, using data augmentation approach. Data preprocessing (.m) and the inference code of QSMnet (.py) are availabe. 
 
 # References
 * QSMnet </br>

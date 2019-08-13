@@ -1,5 +1,16 @@
 import tensorflow as tf
 
+#
+# Description :
+#   3D U-net architecture of QSMnet
+#
+# Copyright @ Woojin Jung & Jaeyeon Yoon
+# Laboratory for Imaging Science and Technology
+# Seoul National University
+# email : wjjung93@snu.ac.kr
+#
+
+
 
 def batch_norm(x, channel, isTrain, decay=0.99, name="bn"):
 

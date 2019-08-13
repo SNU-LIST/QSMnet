@@ -1,9 +1,30 @@
+
+
 import tensorflow as tf
 import numpy as np
 import scipy.io
 import argparse
 import os
 import nibabel as nib
+
+
+#
+# Description :
+#   Inference code of QSMnet and QSMnet+
+#   Save susceptibility map in Matlab and NII format
+# Usage :
+#   python inference_QSMnet.py <patient_dir> <network_name>
+# Outputs :
+#   results_<network_name>.mat & results_<network_name>.nii
+#   ppm unit
+#
+# Copyright @ Woojin Jung & Jaeyeon Yoon
+# Laboratory for Imaging Science and Technology
+# Seoul National University
+# email : wjjung93@snu.ac.kr
+#
+
+
 
 os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
 os.environ["CUDA_VISIBLE_DEVICES"]="0"

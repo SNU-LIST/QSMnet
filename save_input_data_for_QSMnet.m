@@ -10,7 +10,7 @@ function save_input_data_for_QSMnet(TissuePhase, Mask, TE, B0, out_dir)
 %   TE : unit ms
 %   B0 : unit T
 %   out_dir : directory of patient data
-% Ouputs:
+% Outputs:
 %   inf_data.mat file will be saved for network input
 %
 % Copyright @ Woojin Jung

@@ -56,15 +56,15 @@ https://drive.google.com/drive/u/0/folders/1E7e9thvF5Zu68Sr9Mg3DBi-o4UdhWj-8 </b
 * Usage:
   * In MATLAB, run save_input_data_for_QSMnet.m
   * 'inf_data.mat' file will be saved after phase processing.
-```bash
-save_input_data_for_QSMnet(TissuePhase, Mask, TE, B0)
-% TissuePhase : Results of 3D V-SHARP
-% Mask : Results of 3D V-SHARP
-% TE (ms)
-% B0 (T)
-% Convert unit from Hz to ppm : field / (Sum(TE) * B0 * gyro) [ppm]
-```
-   * Save the field data with the same orientation and polarity as inf_data.mat file in 'Example' folder.
+  ```bash
+    save_input_data_for_QSMnet(TissuePhase, Mask, TE, B0)
+    % TissuePhase : Results of 3D V-SHARP
+    % Mask : Results of 3D V-SHARP
+    % TE (ms)
+    % B0 (T)
+    % Convert unit from Hz to ppm : field / (Sum(TE) * B0 * gyro) [ppm]
+  ```
+  * Save the field data with the same orientation and polarity as inf_data.mat file in 'Example' folder.
    <img src="https://user-images.githubusercontent.com/29892433/64081330-5f2b9600-cd3a-11e9-9ff2-20e1e0ef2996.jpg" width="50%" height="50%">
   
 ### Inference

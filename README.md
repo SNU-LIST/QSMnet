@@ -65,7 +65,7 @@ save_input_data_for_QSMnet(TissuePhase, Mask, TE, B0)
 % Convert unit from Hz to ppm : field / (Sum(TE) * B0 * gyro) [ppm]
 ```
   * Save the field data with the same orientation and polarity as inf_data.mat file in 'Example' folder.
-![Image_orientation](https://user-images.githubusercontent.com/29892433/64081330-5f2b9600-cd3a-11e9-9ff2-20e1e0ef2996.jpg){: width="60%" heigth="60%"}
+![Image_orientation](https://user-images.githubusercontent.com/29892433/64081330-5f2b9600-cd3a-11e9-9ff2-20e1e0ef2996.jpg){: width="400" height="400"}
   
 ### Inference
 * Requirements in python library

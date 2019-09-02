@@ -83,7 +83,9 @@ https://drive.google.com/drive/u/0/folders/1E7e9thvF5Zu68Sr9Mg3DBi-o4UdhWj-8 </b
   % symmetry_mode : Data augmentation by inverting the sign of training dataset
   ```
   * Training process in python
-  
+  ```bash
+  python train.py
+  ```
 ### Inference
 * Requirements in python library
   * tensorflow, os, argparse, scipy.io, numpy, niblabel

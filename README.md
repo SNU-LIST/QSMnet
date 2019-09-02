@@ -72,7 +72,7 @@ https://drive.google.com/drive/u/0/folders/1E7e9thvF5Zu68Sr9Mg3DBi-o4UdhWj-8 </b
 ### Training data
 * The source data for training can be shared to academic institutions. Request should be sent to snu.list.software@gmail.com. For each request, individual approval from our institutional review board is required (i.e. takes time)
 
-### Training
+### Training process
 * Requirements in python library
   * tensorflow, numpy, random, os, re, time, scipy.io, h5py, tqdm
 

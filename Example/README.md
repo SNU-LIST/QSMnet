@@ -7,5 +7,4 @@
 
 
 
-
-![QSM_ch2016](https://user-images.githubusercontent.com/29892433/62866545-f4df9100-bd4b-11e9-99d8-363f7ec6551b.jpg)
+![RESULT_FIGURE](https://user-images.githubusercontent.com/29892433/63829126-90573f80-c9a3-11e9-87f6-a1753e068cc1.jpg)

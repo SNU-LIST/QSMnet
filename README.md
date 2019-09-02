@@ -70,7 +70,7 @@ https://drive.google.com/drive/u/0/folders/1E7e9thvF5Zu68Sr9Mg3DBi-o4UdhWj-8 </b
    <img src="https://user-images.githubusercontent.com/29892433/64081330-5f2b9600-cd3a-11e9-9ff2-20e1e0ef2996.jpg" width="50%" height="50%">
   
 ### Training
-#### * The source data for training will be shared on demand by email on our webpage (https://list.snu.ac.kr) after IRB approval. 
+* __The source data for training will be shared on demand by email on our webpage (https://list.snu.ac.kr) after IRB approval__
 
 * Requirements in python library
   * tensorflow, numpy, random, os, re, time, scipy.io, h5py, tqdm

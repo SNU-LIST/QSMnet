@@ -72,6 +72,7 @@ https://drive.google.com/drive/u/0/folders/1E7e9thvF5Zu68Sr9Mg3DBi-o4UdhWj-8 </b
 ### Training
 * Requirements in python library
   * tensorflow, numpy, random, os, re, time, scipy.io, h5py, tqdm
+
 * Usage
   * Before training, local field & susceptibility maps need to be dividied into 64 x 64 x 64 in Matlab
   ```bash
@@ -86,6 +87,7 @@ https://drive.google.com/drive/u/0/folders/1E7e9thvF5Zu68Sr9Mg3DBi-o4UdhWj-8 </b
   ```bash
   python train.py
   ```
+  
 ### Inference
 * Requirements in python library
   * tensorflow, os, argparse, scipy.io, numpy, niblabel

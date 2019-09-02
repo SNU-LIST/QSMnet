@@ -25,6 +25,7 @@ C = {
         'w2': 0.1
     },
     'train': {
+        'GPU_num': 0,
         'patch_size': 64,
         'batch_size': 12,
         'step': 1,
@@ -48,6 +49,7 @@ save_path = C['data']['save_path']
 loss_w1 = C['loss']['w1']
 loss_w2 = C['loss']['w2']
 
+GPU_num = C['train']['GPU_num']
 PS = C['train']['patch_size']
 batch_size = C['train']['batch_size']
 initial_step = C['train']['step']

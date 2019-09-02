@@ -75,6 +75,7 @@ https://drive.google.com/drive/u/0/folders/1E7e9thvF5Zu68Sr9Mg3DBi-o4UdhWj-8 </b
 
 * Usage
   * Before training, local field & susceptibility maps need to be dividied into 64 x 64 x 64 in Matlab
+  
   ```bash
   training_data_patch(training_bf_patch_dir, mask_dir, aug_process, sub_num, aug_num, symmetry_mode)
   % training_bf_patch_dir : Local field & Susceptibility data
@@ -83,7 +84,9 @@ https://drive.google.com/drive/u/0/folders/1E7e9thvF5Zu68Sr9Mg3DBi-o4UdhWj-8 </b
   % ang_num : Number of augmentation direction per subject
   % symmetry_mode : Data augmentation by inverting the sign of training dataset
   ```
+  
   * Training process in python
+  
   ```bash
   python train.py
   ```

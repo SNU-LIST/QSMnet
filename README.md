@@ -69,14 +69,24 @@ https://drive.google.com/drive/u/0/folders/1E7e9thvF5Zu68Sr9Mg3DBi-o4UdhWj-8 </b
   * Save the field data with the same orientation and polarity as inf_data.mat file in 'Example' folder.
    <img src="https://user-images.githubusercontent.com/29892433/64081330-5f2b9600-cd3a-11e9-9ff2-20e1e0ef2996.jpg" width="50%" height="50%">
   
+### Training
+* Requirements in python library
+  * tensorflow, numpy, random, os, re, time, scipy.io, h5py, tqdm
+* Usage
+  * Before training, local field & susceptibility maps need to be dividied into 64 x 64 x 64 in Matlab
+  ```bash
+  training_data_patch(training_bf_patch_dir, mask_dir, aug_process, sub_num, aug_num, symmetry_mode)
+  % training_bf_patch_dir : Local field & Susceptibility data
+  % mask_dir : Mask data
+  % sub_num : Number of subject to train
+  % ang_num : Number of augmentation direction per subject
+  % symmetry_mode : Data augmentation by inverting the sign of training dataset
+  ```
+  * Training process in python
+  
 ### Inference
 * Requirements in python library
-  * tensorflow
-  * os
-  * argparse
-  * scipy.io
-  * numpy
-  * niblabel
+  * tensorflow, os, argparse, scipy.io, numpy, niblabel
 
 * Usage
 ```bash

@@ -1,4 +1,4 @@
-# QSMnet
+# QSMnet & QSMnet<sup>+</sup>
 * The code is for reconstructing Quantitative Susceptibility Mapping by deep neural network (QSMnet) and QSMnet<sup>+</sup>. QSMnet<sup>+</sup> covers a wider range of susceptibility than QSMnet, using data augmentation approach. Data preprocessing (.m) and the inference code of QSMnet (.py) are availabe. 
 
 # References
@@ -11,7 +11,9 @@ _W. Jung, J. Yoon, J. Choi, E. Kim, J. Lee. On the linearity of deep neural netw
 ISMRM 27th annual meeting & exhibition. 2019 May;0317._
 
 # Overview
+## (1) QSMnet
 ![Graphical_abstract](https://user-images.githubusercontent.com/29892433/62440733-5d4ad300-b78c-11e9-975d-ca56e77422aa.jpg)
+## (2) QSMnet<sup>+</sup>
 ![Graphical_abstract2](https://user-images.githubusercontent.com/29892433/62910350-1b88e080-bdbb-11e9-91b8-6280b2d2fa4a.jpg)
 
 ## Requirements

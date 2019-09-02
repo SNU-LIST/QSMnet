@@ -69,9 +69,10 @@ https://drive.google.com/drive/u/0/folders/1E7e9thvF5Zu68Sr9Mg3DBi-o4UdhWj-8 </b
   * Save the field data with the same orientation and polarity as inf_data.mat file in 'Example' folder.
    <img src="https://user-images.githubusercontent.com/29892433/64081330-5f2b9600-cd3a-11e9-9ff2-20e1e0ef2996.jpg" width="50%" height="50%">
   
-### Training
-* __The source data for training will be shared on demand by email on our webpage (https://list.snu.ac.kr) after IRB approval__
+### Training data
+* The source data for training can be shared to academic institutions. Request should be sent to snu.list.software@gmail.com. For each request, individual approval from our institutional review board is required (i.e. takes time)
 
+### Training
 * Requirements in python library
   * tensorflow, numpy, random, os, re, time, scipy.io, h5py, tqdm
 

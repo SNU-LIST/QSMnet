@@ -9,7 +9,7 @@
 #  email : wjjung93@snu.ac.kr
 #
 
-data_folder = './Train/'
+data_folder = './'
 net_name = 'QSMnet_sym'
 C = {
     'data': {

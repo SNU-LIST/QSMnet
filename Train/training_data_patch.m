@@ -33,9 +33,9 @@ patch_stride = [7, 8, 6];
 matrix_cut = [172, 176, 159];
 
 PS = 64; %patch size 64 - 172, 176, 159 
-str_x = (matrix_cut(1)-PS)/(patch_stride(1)-1); %+1
-str_y = (matrix_cut(2)-PS)/(patch_stride(2)-1); %+1
-str_z = (matrix_cut(3)-PS)/(patch_stride(3)-1); %+1
+str_x = (matrix_cut(1)-PS)/(patch_stride(1)-1);
+str_y = (matrix_cut(2)-PS)/(patch_stride(2)-1);
+str_z = (matrix_cut(3)-PS)/(patch_stride(3)-1);
 
 
 [yy, xx] = meshgrid(1:patch_stride(2),1:patch_stride(1));

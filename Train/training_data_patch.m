@@ -138,7 +138,7 @@ end
 
 data_input = data_input(1,:,:,:,:);
 data_label = data_label(1,:,:,:,:);
-mask_input = mask_input(1c
+mask_input = mask_input(1,:,:,:,:);
 
 data_input = single(permute(data_input,[1 4 3 2 5])); 
 data_label = single(permute(data_label,[1 4 3 2 5]));

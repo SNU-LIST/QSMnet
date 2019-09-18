@@ -5,9 +5,9 @@
 * QSMnet </br>
 _J. Yoon, E. Gong, I. Chatnuntawech, B. Bilgic, J. Lee, W. Jung, J. Ko, H. Jung, K. Setsompop, G. Zaharchuk, E.Y. Kim, J. Pauly, J. Lee.
 Quantitative susceptibility mapping using deep neural network: QSMnet.
-Neuroimage. 2018 Oct;179:199-206._
+Neuroimage. 2018 Oct;179:199-206. https://www.sciencedirect.com/science/article/pii/S1053811918305378_
 * QSMnet+ </br>
-_W. Jung, J. Yoon, J. Choi, E. Kim, J. Lee. Exploring linearity of deep neural network trained QSM: QSMnet+.
+_W. Jung, J. Yoon, J. Choi, J. Kim, Y. Nam, E. Kim, J. Lee. Exploring linearity of deep neural network trained QSM: QSMnet+.
 arXiv. 2019 Sep;1909.07716. https://arxiv.org/abs/1909.07716_
 
 # Overview

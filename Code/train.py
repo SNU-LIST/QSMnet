@@ -32,12 +32,12 @@ def train():
     keep_prob = tf.compat.v1.placeholder("float") #dropout rate
 
     #%% Definition of model
-    predX = qsmnet_toy(X, 'relu', keep_prob, False, True)
-    predX_val = qsmnet_toy(X_val, 'relu', keep_prob, True, False)
+    predX = qsmnet_toy(X, 'relu', keep_prob, False, True) # Prediction result of training data
+    predX_val = qsmnet_toy(X_val, 'relu', keep_prob, True, False) # Prediction result of validation data
             
     #%% Definition of loss function
-    loss = l1(predX, Y)
-    loss_val = l1(predX_val,Y_val)
+    loss = l1(predX, Y) # training loss
+    loss_val = l1(predX_val,Y_val) # validation loss
            
     #%% Definition of optimizer
     train_op = tf.compat.v1.train.AdamOptimizer(learning_rate=learning_rate).minimize(loss)

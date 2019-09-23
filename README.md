@@ -60,7 +60,7 @@ and unzip the files </br>
 * Usage:
 
   After 3D V-SHARP in MATLAB, run save_input_data_for_QSMnet.m
-  * 'test_input{sub_num}.mat' file will be saved after phase processing.
+  * 'test_input{sub_num}.mat' file will be saved in 'Data/Test/Input/'.
   ```bash
     save_input_data_for_QSMnet(TissuePhase, Mask, TE, B0)
     % TissuePhase : Results of 3D V-SHARP

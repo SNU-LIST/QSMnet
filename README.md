@@ -44,7 +44,7 @@ sh download_network.sh
 ```
 * For Windows User, </br>
 https://drive.google.com/open?id=1mxayxvumshJAHNhVnD8UOem4uD8C85TY </br>
-and unzip the files </br>
+and unzip the files in 'Checkpoints'</br>
 
 ### Phase processing
 * Requirements

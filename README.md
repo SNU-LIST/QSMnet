@@ -1,5 +1,5 @@
 # QSMnet & QSMnet<sup>+</sup>
-* The code is for reconstructing Quantitative Susceptibility Mapping by deep neural network (QSMnet) and QSMnet<sup>+</sup>. QSMnet<sup>+</sup> covers a wider range of susceptibility than QSMnet, using data augmentation approach. Data preprocessing (.m) and the inference code of QSMnet (.py) are availabe. 
+* The code is for reconstructing Quantitative Susceptibility Mapping by deep neural network (QSMnet) and QSMnet<sup>+</sup>. QSMnet<sup>+</sup> covers a wider range of susceptibility than QSMnet, using data augmentation approach. Data preprocessing, training and  inference code of QSMnet (.py) are availabe. 
 
 # References
 * QSMnet </br>
@@ -37,12 +37,14 @@ arXiv. 2019 Sep;1909.07716. https://arxiv.org/abs/1909.07716_
 git clone https://github.com/SNU-LIST/QSMnet.git
 ```
 2. Download network </br>
+In Checkpoints directory,
 * For Linux User,
 ```bash
 sh download_network.sh
 ```
 * For Windows User, </br>
 https://drive.google.com/drive/u/0/folders/1E7e9thvF5Zu68Sr9Mg3DBi-o4UdhWj-8 </br>
+and unzip the files </br>
 
 ### Phase processing
 * Requirements
@@ -56,8 +58,9 @@ https://drive.google.com/drive/u/0/folders/1E7e9thvF5Zu68Sr9Mg3DBi-o4UdhWj-8 </b
   * Background field removal : 3D V-SHARP (STI Suite)
   
 * Usage:
-  * In MATLAB, run save_input_data_for_QSMnet.m
-  * 'inf_data.mat' file will be saved after phase processing.
+
+  In MATLAB, run save_input_data_for_QSMnet.m
+  * 'test_input{sub_num}.mat' file will be saved after phase processing.
   ```bash
     save_input_data_for_QSMnet(TissuePhase, Mask, TE, B0)
     % TissuePhase : Results of 3D V-SHARP
@@ -66,7 +69,7 @@ https://drive.google.com/drive/u/0/folders/1E7e9thvF5Zu68Sr9Mg3DBi-o4UdhWj-8 </b
     % B0 (T)
     % Convert unit from Hz to ppm : field / (Sum(TE) * B0 * gyro) [ppm]
   ```
-  * Save the field data with the same orientation and polarity as inf_data.mat file in 'Example' folder.
+  * Save data with the same orientation and polarity as val_input.mat & val_label.mat file in 'Data/Train/' folder.
    <img src="https://user-images.githubusercontent.com/29892433/64081330-5f2b9600-cd3a-11e9-9ff2-20e1e0ef2996.jpg" width="50%" height="50%">
   
 ### Training data
@@ -80,12 +83,12 @@ https://drive.google.com/drive/u/0/folders/1E7e9thvF5Zu68Sr9Mg3DBi-o4UdhWj-8 </b
   * Before training, local field & susceptibility maps need to be dividied into 64 x 64 x 64 in Matlab
   
   ```bash
-  training_data_patch(training_bf_patch_dir, mask_dir, aug_process, sub_num, aug_num, symmetry_mode)
-  % training_bf_patch_dir : Local field & Susceptibility data
-  % mask_dir : Mask data
-  % sub_num : Number of subject to train
-  % ang_num : Number of augmentation direction per subject
-  % symmetry_mode : Data augmentation by inverting the sign of training dataset
+  python training_data_patch.py
+  # PS : Patch size
+  # net_name : Network name
+  # sub_num : Number of subject to train
+  # dir_num : Number of direction per subject
+  # patch_num : Number of patches in [x, y, z]
   ```
   
   * Training process in python
@@ -96,10 +99,10 @@ https://drive.google.com/drive/u/0/folders/1E7e9thvF5Zu68Sr9Mg3DBi-o4UdhWj-8 </b
   
 ### Inference
 * Requirements in python library
-  * tensorflow, os, argparse, scipy.io, numpy, niblabel
+  * tensorflow, os, scipy.io, numpy, niblabel
 
 * Usage
 ```bash
-python inference_QSMnet.py <PREPROCESS_DIR> <NETWORK_NAME>
+python inference.py
 ```
-  * 'result_<network_name>.mat' & 'result_<network_name>.nii' will be saved after QSMnet reconstruction.
+  * 'subject#_<network_name>-epochs.mat' & 'subject#_<network_name>-epochs.nii' will be saved after QSMnet reconstruction.

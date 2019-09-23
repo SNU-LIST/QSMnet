@@ -24,7 +24,7 @@ C = {
     },
 
     'train': {
-        'batch_size': 20, # batch size
+        'batch_size': 5, # batch size
         'learning_rate': 0.001, # initial learning rate
         'train_epochs': 25, # The number of training epochs
         'save_step': 5 # Step for saving network

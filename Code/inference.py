@@ -35,10 +35,10 @@ def inf():
     f = scipy.io.loadmat('../Checkpoints/'+ network_name + '/' + 'norm_factor.mat')
     
     
-    b_mean = f['input_mean_total']
-    b_std = f['input_std_total']
-    y_mean = f['label_mean_total']
-    y_std = f['label_std_total']
+    b_mean = f['input_mean']
+    b_std = f['input_std']
+    y_mean = f['label_mean']
+    y_std = f['label_std']
     
     for i in range(1, sub_num + 1):
         input_data = scipy.io.loadmat(FILE_PATH_INPUT + str(i) +'.mat')

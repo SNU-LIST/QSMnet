@@ -9,13 +9,9 @@
 # Seoul National University
 # email : wjjung93@snu.ac.kr
 #
-
-
 wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1mxayxvumshJAHNhVnD8UOem4uD8C85TY' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1mxayxvumshJAHNhVnD8UOem4uD8C85TY" -O QSMnet_64.tar.gz && rm -rf /tmp/cookies.txt 
-
-#wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1-Fi8b1H_vxKiBw_b6fo8mXpcJ5NCiLmN' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1-Fi8b1H_vxKiBw_b6fo8mXpcJ5NCiLmN" -O QSMnet+.tar.gz && rm -rf /tmp/cookies.txt
-
-tar -xvzf QSMnet_64.tar.gz
+#wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1-Fi8b1H_vxKiBw_b6fo8mXpcJ5NCiLmN' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1-Fi8b1H_vxKiBw_b6fo8mXpcJ5NCiLmN" -O QSMnet+.tar.gz && rm -rf /tmp/cookies.txt 
+tar -xvzf QSMnet_64.tar.gz 
+rm QSMnet_64.tar.gz 
 #tar -xvzf QSMnet+.tar.gz
-rm QSMnet_64.tar.gz
 #rm QSMnet+.tar.gz 

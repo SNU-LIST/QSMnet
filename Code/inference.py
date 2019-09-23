@@ -28,15 +28,13 @@ sub_num = 1 #number of subjects in testset
 '''
 File Path
 '''
-FILE_PATH_INPUT = '../Data/Test/Input/test_input.mat'
-FILE_PATH_LABEL = '../Data/Test/Label/test_label.mat'
+FILE_PATH_INPUT = '../Data/Test/Input/test_input'
 FILE_PATH_PRED = '../Data/Test/Prediction/'
 
 
 def inf():
     f = scipy.io.loadmat('../Checkpoints/'+ network_name + '/' + 'norm_factor.mat')
-    input_data = scipy.io.loadmat(FILE_PATH_INPUT)
-    label_data = scipy.io.loadmat(FILE_PATH_LABEL)
+    
     
     b_mean = f['input_mean']
     b_std = f['input_std']
@@ -44,11 +42,11 @@ def inf():
     y_std = f['label_std']
     
     for i in range(1, sub_num+1):
+        input_data = scipy.io.loadmat(FILE_PATH_INPUT + str(i) +'.mat')
         tf.compat.v1.reset_default_graph()
         
         print('Subject number: ' + str(i))
-        label = label_data["chi_cosmos"+str(i)]
-        field = input_data["phs_tissue"+str(i)]
+        field = input_data["phs_tissue"]
         field = (field - b_mean) / b_std
         [pfield, N_difference, N] = padding_data(field)
         
@@ -68,7 +66,7 @@ def inf():
             result_im = y_std * sess.run(feed_result, feed_dict={Z: pfield, keep_prob: 1.0}) + y_mean
             result_im = crop_data(result_im.squeeze(), N_difference)
             
-            display_slice([52,72,92,112], result_im, label)
+            display_slice_inf([52,72,92,112], result_im)
             print('##########Saving MATLAB & NII file...##########')
             scipy.io.savemat(FILE_PATH_PRED + '/subject' + str(i) + '_' + str(network_name) + '-25.mat', mdict={'sus': result_im})
             save_nii(result_im, FILE_PATH_PRED, 'subject' + str(i) + '_' + str(network_name)+'-25')

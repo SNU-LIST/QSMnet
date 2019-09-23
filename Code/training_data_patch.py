@@ -29,9 +29,9 @@ import os
 '''
 File Path
 '''
-FILE_PATH_INPUT = '../Data/Train/Input/train_input.mat'
-FILE_PATH_MASK = '../Data/Train/Input/mask.mat'
-FILE_PATH_LABEL = '../Data/Train/Label/train_label.mat'
+FILE_PATH_INPUT = '../Data/Train/Input/train_input'
+FILE_PATH_MASK = '../Data/Train/Input/mask'
+FILE_PATH_LABEL = '../Data/Train/Label/train_label'
 start_time = time.time()
 
 '''
@@ -46,32 +46,32 @@ patch_num = [10, 10, 10]  # Order of Dimensions: [x, y, z]
 '''
 Code Start
 '''
-field = scipy.io.loadmat(FILE_PATH_INPUT)
-susc = scipy.io.loadmat(FILE_PATH_LABEL)
-mask = scipy.io.loadmat(FILE_PATH_MASK)
 
 # Create Result File
 result_file = h5py.File(
     '../Data/Training_Data_patch/training_data_patch_'+ str(net_name) + '_' + str(PS) + '.hdf5', 'w')
 
 # Patch the input & mask file ----------------------------------------------------------------
-matrix_size = np.shape(field['phs_tissue'])
-strides = [(matrix_size[i] - PS) // (patch_num[i] - 1) for i in range(3)]
+
 
 print("####patching input####")
 patches = []
 patches_mask = []
 for dataset_num in range(1, sub_num + 1):
+    field = scipy.io.loadmat(FILE_PATH_INPUT + str (dataset_num) + '.mat')
+    mask = scipy.io.loadmat(FILE_PATH_MASK + str(dataset_num) + '.mat')
+    matrix_size = np.shape(field['phs_tissue'])
+    strides = [(matrix_size[i] - PS) // (patch_num[i] - 1) for i in range(3)]
     for idx in range(dir_num):
         for i in range(patch_num[0]):
             for j in range(patch_num[1]):
                 for k in range(patch_num[2]):
-                    patches.append(field['phs_tissue'+str(dataset_num)][
+                    patches.append(field['phs_tissue'][
                                    i * strides[0]:i * strides[0] + PS,
                                    j * strides[1]:j * strides[1] + PS,
                                    k * strides[2]:k * strides[2] + PS])
                                    #idx])
-                    patches_mask.append(mask['mask'+str(dataset_num)][
+                    patches_mask.append(mask['mask'][
                                         i * strides[0]:i * strides[0] + PS,
                                         j * strides[1]:j * strides[1] + PS,
                                         k * strides[2]:k * strides[2] + PS])
@@ -100,11 +100,14 @@ del patches
 patches = []
 print("####patching label####")
 for dataset_num in range(1, sub_num + 1):
+    susc = scipy.io.loadmat(FILE_PATH_LABEL + str (dataset_num) + '.mat)
+    matrix_size = np.shape(susc['chi_cosmos'])
+    strides = [(matrix_size[i] - PS) // (patch_num[i] - 1) for i in range(3)]
     for idx in range(dir_num):
         for i in range(patch_num[0]):
             for j in range(patch_num[1]):
                 for k in range(patch_num[2]):
-                    patches.append(susc['chi_cosmos'+str(dataset_num)][
+                    patches.append(susc['chi_cosmos'][
                                    i * strides[0]:i * strides[0] + PS,
                                    j * strides[1]:j * strides[1] + PS,
                                    k * strides[2]:k * strides[2] + PS])

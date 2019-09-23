@@ -220,3 +220,18 @@ def crop_data(result_pad, N_dif):
     result_final  = result_pad[N_dif[0]:N_p[0]-N_dif[0],N_dif[1]:N_p[1]-N_dif[1],N_dif[2]:N_p[2]-N_dif[2]]
     return result_final
 
+def display_slice_inf(display_num, Pred):
+     fig = plt.figure(figsize=(12,10))
+     nonorm = matplotlib.colors.NoNorm()
+     col = np.size(display_num)
+     for i in range(col):
+
+         subplot = fig.add_subplot(3, col, i + 1)
+         subplot.set_xticks([]), subplot.set_yticks([])
+         subplot.imshow(np.rot90(np.clip(Pred[:,:,display_num[i]], -0.1, 0.1) * 5 + 0.5, -1),
+                        cmap = plt.cm.gray, norm=nonorm)
+         if i == 0:
+             subplot.set_ylabel('Prediction', fontsize=18)
+
+     plt.show()
+     plt.close()

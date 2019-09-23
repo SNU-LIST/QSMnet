@@ -43,7 +43,7 @@ In Checkpoints directory,
 sh download_network.sh
 ```
 * For Windows User, </br>
-https://drive.google.com/drive/u/0/folders/1E7e9thvF5Zu68Sr9Mg3DBi-o4UdhWj-8 </br>
+https://drive.google.com/file/d/1mxxxNlcxNEQVDModRtMKl5P8CeupSkMY/ </br>
 and unzip the files in 'Checkpoints/' </br>
 
 ### Phase processing

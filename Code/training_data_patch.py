@@ -49,7 +49,7 @@ Code Start
 
 # Create Result File
 result_file = h5py.File(
-    '../Data/Train/Training_Data_patch/training_data_patch_'+ str(net_name) + '_' + str(PS) + '.hdf5', 'w')
+    '../Data/Train/Training_data_patch/training_data_patch_'+ str(net_name) + '_' + str(PS) + '.hdf5', 'w')
 
 # Patch the input & mask file ----------------------------------------------------------------
 

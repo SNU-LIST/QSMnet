@@ -133,6 +133,6 @@ save_path = '../Checkpoints/' + str(net_name) + '_'+ str(PS) + '/'
 if not os.path.exists(save_path):
     os.makedirs(save_path)
 scipy.io.savemat(save_path + 'norm_factor.mat',
-                 mdict={'input_mean': input_mean, 'input_std': input_std,
-                        'label_mean': label_mean, 'label_std': label_std})
+                 mdict={'input_mean_total': input_mean, 'input_std_total': input_std,
+                        'label_mean_total': label_mean, 'label_std_total': label_std})
 print("Total Time: {:.3f}".format(time.time() - start_time))

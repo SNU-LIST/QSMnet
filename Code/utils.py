@@ -41,10 +41,10 @@ class dataset():
         self.tesusc = np.expand_dims(self.tesusc, axis=0)
         self.tesusc = np.expand_dims(self.tesusc, axis=4)
         
-        self.X_mean = f3["input_mean"]
-        self.X_std = f3["input_std"]
-        self.Y_mean = f3["label_mean"]
-        self.Y_std = f3["label_std"]
+        self.X_mean = f3["input_mean_total"]
+        self.X_std = f3["input_std_total"]
+        self.Y_mean = f3["label_mean_total"]
+        self.Y_std = f3["label_std_total"]
         
 
         

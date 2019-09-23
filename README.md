@@ -17,11 +17,11 @@ arXiv. 2019 Sep;1909.07716. https://arxiv.org/abs/1909.07716_
 ![Figure_QSMnetp](https://user-images.githubusercontent.com/29892433/64114182-5208b880-cdc7-11e9-878d-4c3608e3facb.png)
 
 ## Requirements
-* Python 2.7
+* Python 3.7
 
-* Tensorflow 1.8.0
+* Tensorflow 1.14.0
 
-* NVIDIA GPU (CUDA 9.0)
+* NVIDIA GPU (CUDA 10.0)
 
 * MATLAB R2015b
 

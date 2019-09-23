@@ -49,7 +49,7 @@ Code Start
 
 # Create Result File
 result_file = h5py.File(
-    '../Data/Training_Data_patch/training_data_patch_'+ str(net_name) + '_' + str(PS) + '.hdf5', 'w')
+    '../Data/Train/Training_Data_patch/training_data_patch_'+ str(net_name) + '_' + str(PS) + '.hdf5', 'w')
 
 # Patch the input & mask file ----------------------------------------------------------------
 
@@ -100,7 +100,7 @@ del patches
 patches = []
 print("####patching label####")
 for dataset_num in range(1, sub_num + 1):
-    susc = scipy.io.loadmat(FILE_PATH_LABEL + str (dataset_num) + '.mat)
+    susc = scipy.io.loadmat(FILE_PATH_LABEL + str (dataset_num) + '.mat')
     matrix_size = np.shape(susc['chi_cosmos'])
     strides = [(matrix_size[i] - PS) // (patch_num[i] - 1) for i in range(3)]
     for idx in range(dir_num):

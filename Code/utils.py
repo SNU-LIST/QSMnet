@@ -207,9 +207,7 @@ def save_nii(data, save_folder, name):
 
     nifti_affine = np.array([[1,0,0,1], [0,1,0,1], [0,0,1,1], [0,0,0,1]], dtype=np.float)
 
-    #data = data.squeeze().numpy()
-    data = np.fliplr(data)
-    data = np.pad(data, ((2, 2), (6, 7), (6, 7)), mode='constant')
+    data = np.fliplr(data) 
     nifti = nib.Nifti1Image(data, affine=nifti_affine)
     nib.save(nifti, os.path.join(save_folder, name + '.nii.gz'))
 

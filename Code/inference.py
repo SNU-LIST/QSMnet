@@ -25,6 +25,8 @@ network_name = 'QSMnet+_64'
 net_model = 'qsmnet_deep'
 sub_num = 1 #number of subjects in testset
 act_func = 'leaky_relu'
+epoch = 25
+
 '''
 File Path
 '''
@@ -59,7 +61,7 @@ def inf():
         with tf.compat.v1.Session() as sess:
             sess.run(tf.compat.v1.global_variables_initializer())
             print('##########Restore Network##########')
-            saver.restore(sess, '../Checkpoints/'+ network_name + '/' + network_name + '-25')
+            saver.restore(sess, '../Checkpoints/'+ network_name + '/' + network_name + '_' + str(epoch))
             print('Done!')
             print('##########Inference...##########')
             result_im = y_std * sess.run(feed_result, feed_dict={Z: pfield, keep_prob: 1.0}) + y_mean
@@ -67,8 +69,8 @@ def inf():
             
             display_slice_inf([52,72,92,112], result_im)
             print('##########Saving MATLAB & NII file...##########')
-            scipy.io.savemat(FILE_PATH_PRED + '/subject' + str(i) + '_' + str(network_name) + '-25.mat', mdict={'sus': result_im})
-            save_nii(result_im, FILE_PATH_PRED, 'subject' + str(i) + '_' + str(network_name)+'-25')
+            scipy.io.savemat(FILE_PATH_PRED + '/subject' + str(i) + '_' + str(network_name) + '_' + str(epoch) + '.mat', mdict={'sus': result_im})
+            save_nii(result_im, FILE_PATH_PRED, 'subject' + str(i) + '_' + str(network_name) + '_' + str(epoch))
         print('All done!')
 
 if __name__ == '__main__':

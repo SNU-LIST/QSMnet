@@ -24,7 +24,7 @@ Network model
 network_name = 'QSMnet+_64'
 net_model = 'qsmnet_deep'
 sub_num = 1 #number of subjects in testset
-
+act_func = 'leaky_relu'
 '''
 File Path
 '''
@@ -53,7 +53,7 @@ def inf():
         keep_prob = tf.compat.v1.placeholder("float")
     
         net_func = getattr(network_model, net_model)
-        feed_result = net_func(Z, 'leaky_relu', False, False)
+        feed_result = net_func(Z, act_func, False, False)
     
         saver = tf.compat.v1.train.Saver()
         with tf.compat.v1.Session() as sess:

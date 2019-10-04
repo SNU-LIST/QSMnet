@@ -62,7 +62,7 @@ def inf():
         with tf.compat.v1.Session() as sess:
             sess.run(tf.compat.v1.global_variables_initializer())
             print('##########Restore Network##########')
-            saver.restore(sess, '../Checkpoints/'+ network_name + '/' + network_name + '_' + str(epoch))
+            saver.restore(sess, '../Checkpoints/'+ network_name + '/' + network_name + '-' + str(epoch))
             print('Done!')
             print('##########Inference...##########')
             result_im = y_std * sess.run(feed_result, feed_dict={Z: pfield, keep_prob: 1.0}) + y_mean

@@ -201,11 +201,11 @@ def Training_network(dataset, X, Y, X_val, Y_val, predX_val, loss, loss_val, tra
                 
 #%% Utils for inference
      
-def save_nii(data, save_folder, name):
+def save_nii(data, voxel_size,  save_folder, name):
     if not os.path.exists(save_folder):
         os.mkdir(save_folder)
 
-    nifti_affine = np.array([[1,0,0,1], [0,1,0,1], [0,0,1,1], [0,0,0,1]], dtype=np.float)
+    nifti_affine = np.array([[voxel_size[0],0,0,voxel_size[0]], [0,voxel_size[1],0,voxel_size[1]], [0,0,voxel_size[2],voxel_size[2]], [0,0,0,1]], dtype=np.float)
 
     data = np.fliplr(data) 
     nifti = nib.Nifti1Image(data, affine=nifti_affine)

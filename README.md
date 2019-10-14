@@ -1,5 +1,6 @@
 # QSMnet & QSMnet<sup>+</sup>
 * The code is for reconstructing Quantitative Susceptibility Mapping by deep neural network (QSMnet) and QSMnet<sup>+</sup>. QSMnet<sup>+</sup> covers a wider range of susceptibility than QSMnet, using data augmentation approach. Data preprocessing, training and  inference code of QSMnet (.py) are availabe. 
+* Last update : 2019.10.14
 
 # References
 * QSMnet </br>
@@ -43,8 +44,9 @@ In Checkpoints directory,
 sh download_network.sh
 ```
 * For Windows User, </br>
-https://drive.google.com/file/d/1mxxxNlcxNEQVDModRtMKl5P8CeupSkMY/ </br>
+https://drive.google.com/drive/folders/1E7e9thvF5Zu68Sr9Mg3DBi-o4UdhWj-8 </br>
 and unzip the files in 'Checkpoints/' </br>
+* Last update : 2019.10.14
 
 ### Phase processing
 * Requirements

@@ -14,7 +14,7 @@ arXiv. 2019 Sep;1909.07716. https://arxiv.org/abs/1909.07716_
 ## (1) QSMnet
 ![Graphical_abstract](https://user-images.githubusercontent.com/29892433/62440733-5d4ad300-b78c-11e9-975d-ca56e77422aa.jpg)
 ## (2) QSMnet<sup>+</sup>
-![Figure_QSMnetp](https://user-images.githubusercontent.com/29892433/64114182-5208b880-cdc7-11e9-878d-4c3608e3facb.png)
+![Figure_QSMnetp](https://user-images.githubusercontent.com/29892433/66732154-a65a8a00-ee95-11e9-90aa-f23b0d6ee863.png)
 
 ## Requirements
 * Python 3.7

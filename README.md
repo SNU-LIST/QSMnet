@@ -44,7 +44,7 @@ In Checkpoints directory,
 sh download_network.sh
 ```
 * For Windows User, </br>
-https://drive.google.com/file/d/1mxxxNlcxNEQVDModRtMKl5P8CeupSkMY/ </br>
+https://drive.google.com/open?id=1E7e9thvF5Zu68Sr9Mg3DBi-o4UdhWj-8/ </br>
 and unzip the files in 'Checkpoints/' </br>
 * Last update : 2019.10.14
 

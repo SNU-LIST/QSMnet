@@ -7,4 +7,4 @@
 
 
 
-![RESULT_FIGURE](https://user-images.githubusercontent.com/29892433/63829126-90573f80-c9a3-11e9-87f6-a1753e068cc1.jpg)
+![RESULT_FIGURE](https://user-images.githubusercontent.com/29892433/66733253-e6bc0700-ee99-11e9-8551-10d06d540d2c.png)

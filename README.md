@@ -60,9 +60,12 @@ and unzip the files in 'Checkpoints/' </br>
   * Background field removal : 3D V-SHARP (STI Suite)
   
 * Usage:
-
-  After 3D V-SHARP in MATLAB, run save_input_data_for_QSMnet.m
-  * 'test_input{sub_num}.mat' file will be saved in 'Data/Test/Input/'.
+  * If you acquired data with different resolution from 1 x 1 x 1 mm<sup>3</sup>,</br>
+    you need to interpolate the data into 1 mm isotropic resolution before phase processing.</br>
+    (e.g. zero-padding or truncating in Fourier domain)
+    
+  * After 3D V-SHARP in MATLAB, run 'save_input_data_for_QSMnet.m</br>'.
+    'test_input{sub_num}.mat' file will be saved in 'Data/Test/Input/'.
   ```bash
     save_input_data_for_QSMnet(TissuePhase, Mask, TE, B0)
     % TissuePhase : Results of 3D V-SHARP

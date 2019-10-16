@@ -82,7 +82,7 @@ and unzip the files in 'Checkpoints/' </br>
 
 ### Training process
 * Requirements in python library
-  * tensorflow, numpy, random, os, re, time, scipy.io, h5py, tqdm
+  * tensorflow, numpy, matplotlib, scipy.io, h5py, tqdm
 
 * Usage
   * Before training, local field & susceptibility maps need to be dividied into 64 x 64 x 64 in Matlab
@@ -104,7 +104,7 @@ and unzip the files in 'Checkpoints/' </br>
   
 ### Inference
 * Requirements in python library
-  * tensorflow, os, scipy.io, numpy, niblabel
+  * tensorflow, scipy.io, matplotlib, numpy, niblabel
 
 * Usage
 ```bash

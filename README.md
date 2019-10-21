@@ -67,11 +67,12 @@ and unzip the files in 'Checkpoints/' </br>
   * After 3D V-SHARP in MATLAB, run 'save_input_data_for_QSMnet.m</br>'.
     'test_input{sub_num}.mat' file will be saved in 'Data/Test/Input/'.
   ```bash
-    save_input_data_for_QSMnet(TissuePhase, Mask, TE, B0)
+    save_input_data_for_QSMnet(TissuePhase, Mask, TE, B0, sub_num)
     % TissuePhase : Results of 3D V-SHARP
     % Mask : Results of 3D V-SHARP
     % TE (ms)
     % B0 (T)
+    % sub_num : subject number
     % Convert unit from Hz to ppm : field / (Sum(TE) * B0 * gyro) [ppm]
   ```
   * Save data with the same orientation and polarity as val_input.mat & val_label.mat file in 'Data/Train/' folder.

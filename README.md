@@ -70,7 +70,7 @@ and unzip the files in 'Checkpoints/' </br>
     save_input_data_for_QSMnet(TissuePhase, Mask, TE, B0, sub_num)
     % TissuePhase : Results of 3D V-SHARP
     % Mask : Results of 3D V-SHARP
-    % TE (ms)
+    % TE (s)
     % B0 (T)
     % sub_num : subject number
     % Convert unit from Hz to ppm : field / (Sum(TE) * B0 * gyro) [ppm]

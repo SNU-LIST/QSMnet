@@ -128,6 +128,71 @@ def l1(x, y):
     return l1
 
 
+def model_loss(pred, x, m, d, input_std,input_mean,label_std,label_mean):
+    # pred : output
+    # x : input
+    # m : mask
+    # d : dipole kernel
+    pred_sc = pred * label_std + label_mean
+    x2 = tf.complex(pred_sc, tf.zeros_like(pred_sc))
+    x2 = tf.transpose(x2, perm=[0, 4, 1, 2, 3])
+    x2k = tf.signal.fft3d(x2)
+
+    d2 = tf.complex(d, tf.zeros_like(d))
+    d2 = tf.transpose(d2, perm=[0, 4, 1, 2, 3])
+    fk = tf.multiply(x2k, d2)
+
+    f2 = tf.signal.ifft3d(fk)
+    f2 = tf.transpose(f2, perm=[0, 2, 3, 4, 1])
+    f2 = tf.math.real(f2)
+
+    slice_f = tf.multiply(f2, m)
+    X_c = (x * input_std) + input_mean
+    X_c2 = tf.multiply(X_c, m)
+    return l1(X_c2, slice_f)
+
+def grad_loss(x, y):
+    x_cen = x[:, 1:-1, 1:-1, 1:-1, :]
+    x_shape = tf.shape(x)
+    grad_x = tf.zeros_like(x_cen)
+    for i in range(-1, 2):
+        for j in range(-1, 2):
+            for k in range(-1, 2):
+                x_slice = tf.slice(x, [0, i+1, j+1, k+1, 0], [x_shape[0], x_shape[1]-2, x_shape[2]-2, x_shape[3]-2, x_shape[4]])
+                if i*i + j*j + k*k == 0:
+                    temp = tf.zeros_like(x_cen)
+                else:
+                    temp = tf.scalar_mul(1.0 / tf.sqrt(tf.cast(i * i + j * j + k * k, tf.float32)), tf.nn.relu(x_slice - x_cen))
+                grad_x = grad_x + temp
+
+    y_cen = y[:, 1:-1, 1:-1, 1:-1, :]
+    y_shape = tf.shape(y)
+    grad_y = tf.zeros_like(y_cen)
+    for ii in range(-1, 2):
+        for jj in range(-1, 2):
+            for kk in range(-1, 2):
+                y_slice = tf.slice(y, [0, ii + 1, jj + 1, kk + 1, 0],
+                                   [y_shape[0], y_shape[1] - 2, y_shape[2] - 2, y_shape[3] - 2, y_shape[4]])
+                if ii*ii + jj*jj + kk*kk == 0:
+                    temp = tf.zeros_like(y_cen)
+                else:
+                    temp = tf.scalar_mul(1.0 / tf.sqrt(tf.cast(ii * ii + jj * jj + kk * kk, tf.float32)), tf.nn.relu(y_slice - y_cen))
+                grad_y = grad_y + temp
+
+    gd = tf.abs(grad_x - grad_y)
+    gdl = tf.reduce_mean(gd, [1, 2, 3, 4])
+    gdl = tf.reduce_mean(gdl)
+    return gdl
+
+def total_loss(pred, x, y, m, d, w1, w2, input_std, input_mean, label_std, label_mean):
+    l1loss = l1(pred, y)
+    mdloss = model_loss(pred, x, m, d, input_std, input_mean, label_std, label_mean)
+    gdloss = grad_loss(pred, y)
+    tloss = l1loss + mdloss * w1 + gdloss * w2
+    return l1loss, mdloss, gdloss, tloss
+
+
+
 #%% Display validation images
 def display_slice(display_num, Pred, Label):
      fig = plt.figure(figsize=(12,10))

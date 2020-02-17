@@ -98,7 +98,7 @@ print("Final input data size : " + str(np.shape(patches)))
 input_mean = np.mean(patches[patches_mask > 0])
 input_std = np.std(patches[patches_mask > 0])
 
-patches = (patches - input_mean) / input_std
+#patches = (patches - input_mean) / input_std
 
 result_file.create_dataset('temp_i', data=patches)
 result_file.create_dataset('temp_m', data=patches_mask)
@@ -139,7 +139,7 @@ print("Final label data size : " + str(np.shape(patches)))
 label_mean = np.mean(patches[patches_mask > 0])
 label_std = np.std(patches[patches_mask > 0])
 
-patches = (patches - label_mean) / label_std
+#patches = (patches - label_mean) / label_std
 
 result_file.create_dataset('temp_l', data=patches)
 

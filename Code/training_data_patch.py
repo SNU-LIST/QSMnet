@@ -47,6 +47,8 @@ patch_num = [5, 5, 5]  # Order of Dimensions: [x, y, z]
 '''
 Code Start
 '''
+if not os.path.exists('../Data/Train/Training_data_patch'):
+    os.makedirs('../Data/Train/Training_data_patch')
 
 # Create Result File
 result_file = h5py.File(

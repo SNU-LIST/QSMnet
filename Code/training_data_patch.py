@@ -38,11 +38,11 @@ start_time = time.time()
 '''
 Constant Variables
 '''
-PS = 32  # Patch size
+PS = 64  # Patch size
 net_name = 'QSMnet'
-sub_num = 1  # number of subjects
-dir_num = 1  # number of directions
-patch_num = [5, 5, 5]  # Order of Dimensions: [x, y, z]
+sub_num = 5  # number of subjects
+dir_num = 5  # number of directions
+patch_num = [6, 8, 7]  # Order of Dimensions: [x, y, z]
 
 '''
 Code Start

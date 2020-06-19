@@ -31,7 +31,7 @@ import sys
 File Path
 '''
 FILE_PATH_INPUT = '../Data/Train/Input/train_input'
-FILE_PATH_MASK = '../Data/Train/Input/mask'
+FILE_PATH_MASK = '../Data/Train/Input/train_mask'
 FILE_PATH_LABEL = '../Data/Train/Label/train_label'
 start_time = time.time()
 

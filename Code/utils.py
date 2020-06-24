@@ -37,10 +37,11 @@ class dataset():
         
         self.tefield = f2i['phs_tissue']
         self.tesusc = f2l['chi_cosmos']
-        self.tefield = np.expand_dims(self.tefield, axis=0)
-        self.tefield = np.expand_dims(self.tefield, axis=4)
-        self.tesusc = np.expand_dims(self.tesusc, axis=0)
-        self.tesusc = np.expand_dims(self.tesusc, axis=4)
+        if len(np.shape(self.tefield))==3:
+            self.tefield = np.expand_dims(self.tefield, axis=0)
+            self.tefield = np.expand_dims(self.tefield, axis=4)
+            self.tesusc = np.expand_dims(self.tesusc, axis=0)
+            self.tesusc = np.expand_dims(self.tesusc, axis=4)
         
         self.X_mean = f3["input_mean"]
         self.X_std = f3["input_std"]

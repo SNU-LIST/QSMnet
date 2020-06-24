@@ -38,10 +38,13 @@ class dataset():
         self.tefield = f2i['phs_tissue']
         self.tesusc = f2l['chi_cosmos']
         if len(np.shape(self.tefield))==3:
-            self.tefield = np.expand_dims(self.tefield, axis=0)
             self.tefield = np.expand_dims(self.tefield, axis=4)
-            self.tesusc = np.expand_dims(self.tesusc, axis=0)
             self.tesusc = np.expand_dims(self.tesusc, axis=4)
+            
+        self.tefield = np.expand_dims(self.tefield, axis=0)
+        self.tesusc = np.expand_dims(self.tesusc, axis=0)
+        self.tefield = np.swapaxes(self.tefield,0,4)
+        self.tesusc = np.swapaxes(self.tesusc,0,4)
         
         self.X_mean = f3["input_mean"]
         self.X_std = f3["input_std"]
@@ -239,6 +242,7 @@ def Training_network(dataset, X, Y, X_val, Y_val, predX_val, loss, loss_val, tra
         for epoch in range(train_epochs):
             random.shuffle(ind)
             avg_cost = 0
+            avg_cost_val = 0
             total_batch = int(len(ind)/batch_size)    
             for i in tqdm(range(0, len(ind), batch_size)):
                 ind_batch = ind[i:i + batch_size]
@@ -256,15 +260,18 @@ def Training_network(dataset, X, Y, X_val, Y_val, predX_val, loss, loss_val, tra
 
             #%% Validation
             if (epoch + 1) % display_step == 0:
-                input_val = (dataset.tefield - X_mean ) / X_std
-                label_val = (dataset.tesusc - Y_mean ) / Y_std
-                im_val, cost_val = sess.run([predX_val, loss_val], 
-                                            feed_dict={X_val: input_val, Y_val: label_val, keep_prob : 1.0})
-                print("Epoch:", '%04d' % (epoch+1), "Validation_cost=", "{:.5f}".format(cost_val))
-                im_val = dataset.Y_std * im_val.squeeze() + dataset.Y_mean
-                
-                scipy.io.savemat(save_path + 'validation_result/im_epoch' + str(epoch+1) + '.mat', mdict={'val_pred': im_val})
-                display_slice(display_slice_num, im_val, dataset.tesusc.squeeze())
+                for ii in (range(0,np.shape(dataset.tefield)[0])):
+                    input_val = (dataset.tefield[ii:ii+1, :, :, :, :] - X_mean ) / X_std
+                    label_val = (dataset.tesusc[ii:ii+1, :, :, :, :] - Y_mean ) / Y_std
+                    im_val, cost_val = sess.run([predX_val, loss_val], 
+                                                feed_dict={X_val: input_val, Y_val: label_val, keep_prob : 1.0})
+                    avg_cost_val += cost_val / np.shape(dataset.tefield)[0]
+                    if ii==0:
+                        im_val = dataset.Y_std * im_val.squeeze() + dataset.Y_mean
+                        im_label = dataset.Y_std * label_val.squeeze() + dataset.Y_mean
+                        scipy.io.savemat(save_path + 'validation_result/im_epoch' + str(epoch+1) + '.mat', mdict={'val_pred': im_val})
+                        display_slice(display_slice_num, im_val, im_label)
+                print("Epoch:", '%04d' % (epoch+1), "Validation_cost=", "{:.5f}".format(avg_cost_val))
                 
 #%% Utils for inference
      

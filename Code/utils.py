@@ -285,6 +285,14 @@ def save_nii(data, voxel_size,  save_folder, name):
     data = np.flipud(data)
     nifti = nib.Nifti1Image(data, affine=nifti_affine)
     nib.save(nifti, os.path.join(save_folder, name + '.nii.gz'))
+   
+def save_nii_with_copy_existing_nii(copy_nii_dir, data, voxel_size,  save_folder, name):
+    if not os.path.exists(save_folder):
+        os.mkdir(save_folder)
+    
+    nii_for_header = nib.load(copy_nii_dir)
+    nifti = nib.Nifti1Image(data, nii_for_header.affine, nii_for_header.header)
+    nib.save(nifti, os.path.join(save_folder, name + '.nii.gz'))
 
 def padding_data(input_field):
     N = np.shape(input_field)

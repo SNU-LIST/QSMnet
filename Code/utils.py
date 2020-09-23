@@ -290,6 +290,7 @@ def save_nii_with_copy_existing_nii(copy_nii_dir, data, voxel_size,  save_folder
     if not os.path.exists(save_folder):
         os.mkdir(save_folder)
     
+    data = np.fliplr(data)
     nii_for_header = nib.load(copy_nii_dir)
     nifti = nib.Nifti1Image(data, nii_for_header.affine, nii_for_header.header)
     nib.save(nifti, os.path.join(save_folder, name + '.nii.gz'))

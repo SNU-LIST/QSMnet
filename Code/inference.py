@@ -31,11 +31,11 @@ epoch = 25
 sub_num = 1 #number of subjects in testset
 voxel_size = [1, 1, 1] #resolution of subject
 dir_net = '../Checkpoints/'
-
 '''
 File Path
 '''
 FILE_PATH_INPUT = '../Data/Test/Input/test_input'
+FILE_PATH_copy_nii = '../Data/Test/Input/test_mag'   ## original nii data for copying header information
 FILE_PATH_PRED = '../Data/Test/Prediction/'
 
 def inf():
@@ -51,6 +51,7 @@ def inf():
     
     for i in range(1, sub_num + 1):
         input_data = scipy.io.loadmat(FILE_PATH_INPUT + str(i) +'.mat')
+        copy_dir = FILE_PATH_copy_nii + str(i) +'.nii'
         tf.compat.v1.reset_default_graph()
         
         print('Subject number: ' + str(i))
@@ -77,7 +78,8 @@ def inf():
             display_slice_inf([52,72,92], result_im)
             print('##########Saving MATLAB & NII file...##########')
             scipy.io.savemat(FILE_PATH_PRED + '/subject' + str(i) + '_' + str(network_name) + '_' + str(epoch) + '.mat', mdict={'sus': result_im})
-            save_nii(result_im, voxel_size, FILE_PATH_PRED, 'subject' + str(i) + '_' + str(network_name) + '_' + str(epoch))
+            save_nii_with_copy_existing_nii(copy_dir, result_im, voxel_size,  FILE_PATH_PRED, 'subject' + str(i) + '_' + str(network_name) + '_' + str(epoch))
+            #save_nii(result_im, voxel_size, FILE_PATH_PRED, 'subject' + str(i) + '_' + str(network_name) + '_' + str(epoch))
         print('All done!')
 
 if __name__ == '__main__':

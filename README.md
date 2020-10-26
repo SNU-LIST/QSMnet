@@ -10,7 +10,7 @@ Neuroimage. 2018 Oct;179:199-206. https://www.sciencedirect.com/science/article/
 * QSMnet+ </br>
 _W. Jung, J. Yoon, S. Ji, J. Choi, J. Kim, Y. Nam, E. Kim, J. Lee. Exploring linearity of deep neural network trained QSM: QSMnet+.
 Neuroimage. 2020 May; 116619. https://www.sciencedirect.com/science/article/pii/S1053811920301063_</br>
-* Review of deep learning QSM
+* Review of deep learning QSM </br>
 _W. Jung, S. Bollmann, J. Lee. Overview of quantitative susceptibility mapping using deep learning: Current status, challenges and opportunities.
 NMR in Biomedicine. 2020 March; e4292. https://doi.org/10.1002/nbm.4292
 

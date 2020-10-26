@@ -1,6 +1,6 @@
 # QSMnet & QSMnet<sup>+</sup>
 * The code is for reconstructing Quantitative Susceptibility Mapping by deep neural network (QSMnet) and QSMnet<sup>+</sup>. QSMnet<sup>+</sup> covers a wider range of susceptibility than QSMnet, using data augmentation approach. Data preprocessing, training and  inference code of QSMnet (.py) are availabe. 
-* Last update : 2019.10.14
+* Last update : 2020.10.26
 
 # References
 * QSMnet </br>
@@ -9,7 +9,10 @@ Quantitative susceptibility mapping using deep neural network: QSMnet.
 Neuroimage. 2018 Oct;179:199-206. https://www.sciencedirect.com/science/article/pii/S1053811918305378_
 * QSMnet+ </br>
 _W. Jung, J. Yoon, S. Ji, J. Choi, J. Kim, Y. Nam, E. Kim, J. Lee. Exploring linearity of deep neural network trained QSM: QSMnet+.
-Neuroimage. 2020 May; 116619. https://www.sciencedirect.com/science/article/pii/S1053811920301063_
+Neuroimage. 2020 May; 116619. https://www.sciencedirect.com/science/article/pii/S1053811920301063_</br>
+* Review of deep learning QSM
+_W. Jung, S. Bollmann, J. Lee. Overview of quantitative susceptibility mapping using deep learning: Current status, challenges and opportunities.
+NMR in Biomedicine. 2020 March; e4292. https://doi.org/10.1002/nbm.4292
 
 # Overview
 ## (1) QSMnet

@@ -1,5 +1,6 @@
 # QSMnet & QSMnet<sup>+</sup>
-* The code is for reconstructing Quantitative Susceptibility Mapping by deep neural network (QSMnet) and QSMnet<sup>+</sup>. QSMnet<sup>+</sup> covers a wider range of susceptibility than QSMnet, using data augmentation approach. Data preprocessing, training and  inference code of QSMnet (.py) are availabe. 
+* The code is for reconstructing Quantitative Susceptibility Mapping by deep neural network (QSMnet) and QSMnet<sup>+</sup>. QSMnet<sup>+</sup> covers a wider range of susceptibility than QSMnet, using data augmentation approach. Data preprocessing, training and  inference code of QSMnet (.py) are availabe.
+* The source data for training can be shared to academic institutions. Request should be sent to **snu.list.software@gmail.com**. For each request, internal approval from our Institutional Review Board (IRB) is required (i.e. takes time).
 * Last update : 2020.10.26
 
 # References
@@ -80,9 +81,6 @@ and unzip the files in 'Checkpoints/' </br>
   ```
   * Save data with the same orientation and polarity as val_input.mat, val_mask.mat, and val_label.mat files in 'Data/Train/' folder.
    <img src="https://user-images.githubusercontent.com/29892433/64081330-5f2b9600-cd3a-11e9-9ff2-20e1e0ef2996.jpg" width="50%" height="50%">
-  
-### Training data
-* The source data for training can be shared to academic institutions. Request should be sent to snu.list.software@gmail.com. For each request, individual approval from our institutional review board is required (i.e. takes time)
 
 ### Training process
 * Requirements in python library

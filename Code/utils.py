@@ -33,6 +33,7 @@ class dataset():
         f3 = scipy.io.loadmat(save_path + 'norm_factor.mat')
 
         self.trfield = f['temp_i']
+        self.trmask = f['temp_m']
         self.trsusc = f['temp_l']
         
         self.tefield = f2i['phs_tissue']

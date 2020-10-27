@@ -216,7 +216,7 @@ def total_loss(pred, x, y, m, d, w1, w2, input_std, input_mean, label_std, label
     mdloss = model_loss(pred, x, m, d, input_std, input_mean, label_std, label_mean)
     gdloss = grad_loss(pred, y)
     tloss = l1loss + mdloss * w1 + gdloss * w2
-    return l1loss, mdloss, gdloss, tloss
+    return tloss
 
 
 

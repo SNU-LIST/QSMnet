@@ -229,7 +229,7 @@ def display_slice(display_num, Pred, Label):
      plt.close()
 
 #%% Training process
-def Training_network(dataset, X, Y, X_val, Y_val, predX_val, loss, loss_val, train_op, keep_prob, net_saver):
+def Training_network(dataset, X, Y, M, X_val, Y_val, predX_val, loss, loss_val, train_op, keep_prob, net_saver):
     with tf.compat.v1.Session() as sess:
         X_mean = dataset.X_mean
         X_std = dataset.X_std
@@ -249,9 +249,10 @@ def Training_network(dataset, X, Y, X_val, Y_val, predX_val, loss, loss_val, tra
                 ind_batch = ind[i:i + batch_size]
                 ind_batch = np.sort(ind_batch)
                 x_batch = (dataset.trfield[ind_batch, :, :, :, :] - X_mean) / X_std
+                m_batch = dataset.trmask[ind_batch, :, :, :, :]
                 y_batch = (dataset.trsusc[ind_batch, :, :, :, :] - Y_mean) / Y_std
                 cost, _ = sess.run([loss, train_op],
-                                            feed_dict={X: x_batch, Y: y_batch, keep_prob: 0.5})
+                                            feed_dict={X: x_batch, M: m_batch, Y: y_batch, keep_prob: 0.5})
                 avg_cost += cost / total_batch
                                 
             print("Epoch:", '%04d' % (epoch+1), "Training_cost=", "{:.5f}".format(avg_cost))

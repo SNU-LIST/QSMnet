@@ -30,7 +30,9 @@ C = {
         'batch_size': 5, # batch size
         'learning_rate': 0.001, # initial learning rate
         'train_epochs': 25, # The number of training epochs
-        'save_step': 5 # Step for saving network
+        'save_step': 5, # Step for saving network
+        'weight_model': 0.5, # weighting parameter of model loss
+        'weight_grad': 0.1 # weight parameter of gradient different loss
     },
     'validation': {
         'display_step': 2, # display step of validation images
@@ -50,6 +52,8 @@ batch_size = C['train']['batch_size']
 learning_rate = C['train']['learning_rate']
 train_epochs = C['train']['train_epochs']
 save_step = C['train']['save_step']
+w1 = C['train']['weight_model']
+w2 = C['train']['weight_grad']
 
 display_step = C['validation']['display_step']
 display_slice_num = C['validation']['display_slice_num']

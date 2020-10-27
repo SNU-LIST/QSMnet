@@ -25,7 +25,8 @@ def train():
     #%% Declaration of tensor
     X = tf.compat.v1.placeholder("float", [None, PS, PS, PS, 1]) # Training input
     Y = tf.compat.v1.placeholder("float", [None, PS, PS, PS, 1]) # Training label
-    M = tf.compat.v1.placeholder("float", [None, PS, PS, PS, 1]) # Training label
+    M = tf.compat.v1.placeholder("float", [None, PS, PS, PS, 1]) # Training mask
+    D = tf.compat.v1.placeholder("float", [None, PS, PS, PS, 1]) # Training mask
         
     N = np.shape(train_dataset.tefield) # matrix size of validation set 
     X_val = tf.compat.v1.placeholder("float", [None, N[1], N[2], N[3], 1]) # Validation input
@@ -49,7 +50,7 @@ def train():
     qsm_saver = tf.compat.v1.train.Saver()
     
     #%% Running session
-    Training_network(train_dataset, X, Y, M, X_val, Y_val, predX_val, loss, loss_val, train_op, keep_prob, qsm_saver)
+    Training_network(train_dataset, X, Y, M, D, X_val, Y_val, predX_val, loss, loss_val, train_op, keep_prob, qsm_saver)
 
 if __name__ == '__main__':
     start_time = time.time()

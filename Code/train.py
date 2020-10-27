@@ -25,6 +25,7 @@ def train():
     #%% Declaration of tensor
     X = tf.compat.v1.placeholder("float", [None, PS, PS, PS, 1]) # Training input
     Y = tf.compat.v1.placeholder("float", [None, PS, PS, PS, 1]) # Training label
+    M = tf.compat.v1.placeholder("float", [None, PS, PS, PS, 1]) # Training label
         
     N = np.shape(train_dataset.tefield) # matrix size of validation set 
     X_val = tf.compat.v1.placeholder("float", [None, N[1], N[2], N[3], 1]) # Validation input
@@ -37,7 +38,8 @@ def train():
     predX_val = net_func(X_val, act_func, True, False)
     
     #%% Definition of loss function
-    loss = l1(predX, Y)
+    #loss = l1(predX, Y) ##L1 loss
+    loss = total_loss(predX, X, Y, M, D, w1, w2, train_dataset.X_std, train_dataset.X_mean, train_dataset.Y_std, train_dataset.Y_mean) ## L1 loss + gradient loss + model loss
     loss_val = l1(predX_val,Y_val)
            
     #%% Definition of optimizer
@@ -47,7 +49,7 @@ def train():
     qsm_saver = tf.compat.v1.train.Saver()
     
     #%% Running session
-    Training_network(train_dataset, X, Y, X_val, Y_val, predX_val, loss, loss_val, train_op, keep_prob, qsm_saver)
+    Training_network(train_dataset, X, Y, M, X_val, Y_val, predX_val, loss, loss_val, train_op, keep_prob, qsm_saver)
 
 if __name__ == '__main__':
     start_time = time.time()

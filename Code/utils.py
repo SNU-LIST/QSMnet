@@ -52,6 +52,11 @@ class dataset():
         self.Y_mean = f3["label_mean"]
         self.Y_std = f3["label_std"]
         
+        self.dipole = dipole_kernel([PS, PS, PS], voxel_size=[1,1,1], B0_dir=[0,0,1])
+        self.dipole = np.expand_dims(self.dipole, axis=0)
+        self.dipole = np.expand_dims(self.dipole, axis=4)
+        self.dipole = np.tile(self.dipole, (batch_size, 1, 1, 1, 1))
+        
 
         
 #%% batch normalization, 3D convoluation, deconvolution, max pooling
@@ -132,6 +137,23 @@ def l1(x, y):
 
     return l1
 
+def dipole_kernel(matrix_size, voxel_size, B0_dir=[0,0,1]):
+
+    [Y,X,Z] = np.meshgrid(np.linspace(-np.int(matrix_size[1]/2),np.int(matrix_size[1]/2)-1, matrix_size[1]),
+                       np.linspace(-np.int(matrix_size[0]/2),np.int(matrix_size[0]/2)-1, matrix_size[0]),
+                       np.linspace(-np.int(matrix_size[2]/2),np.int(matrix_size[2]/2)-1, matrix_size[2]))
+    X = X/(matrix_size[0])*voxel_size[0]
+    Y = Y/(matrix_size[1])*voxel_size[1]
+    Z = Z/(matrix_size[2])*voxel_size[2]
+    D = 1/3 - np.divide(np.square(X*B0_dir[0] + Y*B0_dir[1] + Z*B0_dir[2]), np.square(X)+np.square(Y)+np.square(Z))
+    D = np.where(np.isnan(D),0,D)
+
+    D = np.roll(D,np.int(np.floor(matrix_size[0]/2)),axis=0)
+    D = np.roll(D,np.int(np.floor(matrix_size[1]/2)),axis=1)
+    D = np.roll(D,np.int(np.floor(matrix_size[2]/2)),axis=2)
+    D = np.float32(D)
+    
+    return D
 
 def model_loss(pred, x, m, d, input_std,input_mean,label_std,label_mean):
     # pred : output
@@ -229,7 +251,7 @@ def display_slice(display_num, Pred, Label):
      plt.close()
 
 #%% Training process
-def Training_network(dataset, X, Y, M, X_val, Y_val, predX_val, loss, loss_val, train_op, keep_prob, net_saver):
+def Training_network(dataset, X, Y, M, D, X_val, Y_val, predX_val, loss, loss_val, train_op, keep_prob, net_saver):
     with tf.compat.v1.Session() as sess:
         X_mean = dataset.X_mean
         X_std = dataset.X_std
@@ -251,8 +273,9 @@ def Training_network(dataset, X, Y, M, X_val, Y_val, predX_val, loss, loss_val, 
                 x_batch = (dataset.trfield[ind_batch, :, :, :, :] - X_mean) / X_std
                 m_batch = dataset.trmask[ind_batch, :, :, :, :]
                 y_batch = (dataset.trsusc[ind_batch, :, :, :, :] - Y_mean) / Y_std
+                d_batch = dataset.dipole[0:batch_size, :, :, :, :]
                 cost, _ = sess.run([loss, train_op],
-                                            feed_dict={X: x_batch, M: m_batch, Y: y_batch, keep_prob: 0.5})
+                                            feed_dict={X: x_batch, M: m_batch, Y: y_batch, D:d_batch, keep_prob: 0.5})
                 avg_cost += cost / total_batch
                                 
             print("Epoch:", '%04d' % (epoch+1), "Training_cost=", "{:.5f}".format(avg_cost))

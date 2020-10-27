@@ -12,18 +12,18 @@ import numpy as np
 #
 
 data_folder = "../Data/"
-net_name = 'QSMnet+'
-PS = '64' # patch_size
+net_name = 'QSMnet'
+PS = 64 # patch_size
 act_func = 'leaky_relu'
 net_model = 'qsmnet_deep'
 
 C = {
     'data': {
         'data_folder': data_folder,
-        'train_data_path': data_folder + 'Train/Training_data_patch/training_data_patch_' + net_name + '_' + PS + '.hdf5',
+        'train_data_path': data_folder + 'Train/Training_data_patch/training_data_patch_' + net_name + '_' + str(PS) + '.hdf5',
         'val_input_path': data_folder + 'Train/Input/val_input.mat',
         'val_label_path': data_folder + 'Train/Label/val_label.mat',
-        'save_path': '../Checkpoints/' + net_name + '_'+ PS + '/'
+        'save_path': '../Checkpoints/' + net_name + '_'+ str(PS) + '/'
     },
 
     'train': {
@@ -47,7 +47,7 @@ save_path = C['data']['save_path']
 if not os.path.exists(save_path+ 'validation_result'):
     os.makedirs(save_path + 'validation_result')
 network_info = [act_func, net_model]                
-np.save(save_path + 'network_info_' + net_name + '_' + PS, network_info)
+np.save(save_path + 'network_info_' + net_name + '_' + str(PS), network_info)
 batch_size = C['train']['batch_size']
 learning_rate = C['train']['learning_rate']
 train_epochs = C['train']['train_epochs']

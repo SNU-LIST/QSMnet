@@ -1,7 +1,7 @@
 # QSMnet & QSMnet<sup>+</sup>
 * The code is for reconstructing Quantitative Susceptibility Mapping by deep neural network (QSMnet) and QSMnet<sup>+</sup>. QSMnet<sup>+</sup> covers a wider range of susceptibility than QSMnet, using data augmentation approach. Data preprocessing, training and  inference code of QSMnet (.py) are availabe.
 * The source data for training can be shared to academic institutions. Request should be sent to **snu.list.software@gmail.com**. For each request, internal approval from our Institutional Review Board (IRB) is required (i.e. takes time).
-* Last update : 2020.10.26
+* Last update : 2020.10.28
 
 # References
 * QSMnet </br>

@@ -78,8 +78,10 @@ def inf():
             display_slice_inf([52,72,92], result_im)
             print('##########Saving MATLAB & NII file...##########')
             scipy.io.savemat(FILE_PATH_PRED + '/subject' + str(i) + '_' + str(network_name) + '_' + str(epoch) + '.mat', mdict={'sus': result_im})
-            save_nii_with_copy_existing_nii(copy_dir, result_im, voxel_size,  FILE_PATH_PRED, 'subject' + str(i) + '_' + str(network_name) + '_' + str(epoch))
-            #save_nii(result_im, voxel_size, FILE_PATH_PRED, 'subject' + str(i) + '_' + str(network_name) + '_' + str(epoch))
+            if os.path.exists(copy_dir):
+                save_nii_with_copy_existing_nii(copy_dir, result_im, voxel_size,  FILE_PATH_PRED, 'subject' + str(i) + '_' + str(network_name) + '_' + str(epoch))
+            else:
+                save_nii(result_im, voxel_size, FILE_PATH_PRED, 'subject' + str(i) + '_' + str(network_name) + '_' + str(epoch))
         print('All done!')
 
 if __name__ == '__main__':

@@ -88,9 +88,10 @@ conda create --name qsmnet -c conda-forge -c anaconda --file requirements.txt
    <img src="https://user-images.githubusercontent.com/29892433/64081330-5f2b9600-cd3a-11e9-9ff2-20e1e0ef2996.jpg" width="50%" height="50%">
 
 ### Training process
-* Requirements in python library
-  * tensorflow, numpy, matplotlib, scipy.io, h5py, tqdm
-
+* Activate qsmnet conda environment 
+   ```bash
+   conda activate qsmnet 
+   ```
 * Usage
   * Before training, local field & susceptibility maps need to be dividied into 64 x 64 x 64 in Matlab
   
@@ -110,11 +111,12 @@ conda create --name qsmnet -c conda-forge -c anaconda --file requirements.txt
   ```
   
 ### Inference
-* Requirements in python library
-  * tensorflow, scipy.io, matplotlib, numpy, niblabel
-
+* Activate qsmnet conda environment 
+   ```bash
+   conda activate qsmnet 
+   ```
 * Usage
-```bash
-python inference.py
-```
+   ```bash
+   python inference.py
+   ```
   * 'subject#_<network_name>-epochs.mat' & 'subject#_<network_name>-epochs.nii' will be saved after QSMnet reconstruction.

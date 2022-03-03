@@ -50,7 +50,12 @@ sh download_network.sh
 * For Windows User, </br>
 https://drive.google.com/drive/folders/1E7e9thvF5Zu68Sr9Mg3DBi-o4UdhWj-8 </br>
 and unzip the files in 'Checkpoints/' </br>
-* Last update : 2019.10.14
+
+3. Create conda environment
+```bash
+conda create --name qsmnet -c conda-forge -c anaconda --file requirements.txt 
+```
+* Last update : 2022.03.03
 
 ### Phase processing
 * Requirements

@@ -48,7 +48,7 @@ In Checkpoints directory,
 sh download_network.sh
 ```
 * For Windows User, </br>
-https://drive.google.com/drive/folders/1E7e9thvF5Zu68Sr9Mg3DBi-o4UdhWj-8 </br>
+[https://drive.google.com/drive/folders/1E7e9thvF5Zu68Sr9Mg3DBi-o4UdhWj-8](https://drive.google.com/drive/folders/1kSxj1Pw3yC_NC9jEkWZ8XxDdLuqpJeaf) </br>
 and unzip the files in 'Checkpoints/' </br>
 
 3. Create conda environment

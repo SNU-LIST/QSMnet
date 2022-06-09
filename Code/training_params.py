@@ -47,7 +47,7 @@ save_path = C['data']['save_path']
 if not os.path.exists(save_path+ 'validation_result'):
     os.makedirs(save_path + 'validation_result')
 network_info = [act_func, net_model]                
-np.save(save_path + 'network_info_' + net_name + '_' + str(PS), network_info)
+# np.save(save_path + 'network_info_' + net_name + '_' + str(PS), network_info)  # remove annotation when training network
 batch_size = C['train']['batch_size']
 learning_rate = C['train']['learning_rate']
 train_epochs = C['train']['train_epochs']
